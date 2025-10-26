@@ -2,11 +2,13 @@ import type { VideoLectureType } from "../types/VideoLectureType";
 
 interface VideoLectureComponentProps {
   vidlec: VideoLectureType;
+  name:string
 }
 
-const VideoLectureComponent = ({ vidlec }: VideoLectureComponentProps) => {
+const VideoLectureComponent = ({ vidlec,name }: VideoLectureComponentProps) => {
   return (
     <div className="flex">
+      <h1>{name}</h1>
       <div className="font-bold flex my-auto mx-4">{vidlec.id}</div>
       <div className="h-40 w-5/6 bg-white shadow-2xl flex group cursor-pointer overflow-hidden rounded-lg">
         <div className="w-1/5 h-full relative overflow-hidden">

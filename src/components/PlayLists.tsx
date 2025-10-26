@@ -1,21 +1,24 @@
 import VideoLectureComponent from "./VideoLectureComponent";
-import {videoLectures1} from "./LecturesArray1"
-import { videoLectures2 } from "./LecturesArray2";
+import type { VideoLectureType } from "../types/VideoLectureType";
 
+interface PlayListsProps {
+  data: VideoLectureType;
+  name: string;
+}
 
-function PlayLists() {
+function PlayLists({ data, name }: PlayListsProps) {
   return (
     <>
-    <div className="flex flex-col gap-2">
-     
-      {videoLectures1.map((video_lecture, i ) => (
-          <VideoLectureComponent key={video_lecture.id} vidlec={video_lecture} index={i+1} />
+      <div className="flex flex-col gap-2">
+        <span>{name}</span>
+        {data.map((video_lecture: VideoLectureType, i: number) => (
+          <VideoLectureComponent
+            key={video_lecture.id}
+            vidlec={video_lecture}
+            index={i + 1}
+          />
         ))}
-        {videoLectures2.map((video_lecture, i ) => (
-          <VideoLectureComponent key={video_lecture.id} vidlec={video_lecture} index={i+1} />
-        ))}
-    </div>
-      
+      </div>
     </>
   );
 }
