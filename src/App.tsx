@@ -1,14 +1,12 @@
-
-import './App.css'
-import VideoLectureComponent from './components/VideoLectureComponent'
+import "./App.css";
+import PlayLists from "./components/PlayLists";
 
 function App() {
- 
   return (
     <>
-    <VideoLectureComponent id={0} thumbnail={''} title={''} views={0} created_date={''} channel_name={''} />
+      <PlayLists />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
